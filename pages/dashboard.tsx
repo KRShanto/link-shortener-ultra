@@ -622,7 +622,7 @@ export default function Dashboard() {
             <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />
             <input type="text" placeholder="Affiliate profile code" />
-            <input type="text" placeholder="First Token" />
+            <input type="text" placeholder="Facebook Token" />
             <label htmlFor="check">Redirect to Error page</label>
             <input type="checkbox" id="check" />
             <select
