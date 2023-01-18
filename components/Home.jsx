@@ -60,10 +60,15 @@ export default function Home() {
     if (datas.type === "SUCCESS") {
       // const link = `https://www.facebook.com/l.php?u=${encodLink}/${datas.data.shortCode}${datas.data.firstToken}`;
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
+<<<<<<< HEAD
 
       const link = urlInput;
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqa3JCTi1XQW53RkNyQlh3aEFNRTMxekNkVEYwUXxBQ3Jtc0trdU5SQjdfTGRJaVVsMzFITGlJZlJYUW1IWGxqWG1PMjBqYy1IZmo3VENST2ktdDkyTUdKTGI2ZmItT1hKNS1BdHR1UVNtZ0o4eE5ra0lNdHdyc3pPNGRjUVpBSzVtTHd0OVY1eC00ekt5Xzd4MldTWQ&q=${urlInput}&html_redirect=1`;
 
+=======
+      // const link = `${datas.data.domain}/${datas.data.shortCode}`;
+      const link = urlInput;
+>>>>>>> 11f44f089a25a1566b4a6c0e657684c29927a687
 
       const options = {
         method: "POST",
