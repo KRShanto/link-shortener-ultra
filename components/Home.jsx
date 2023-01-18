@@ -97,8 +97,7 @@ export default function Home() {
       const res = await fetch("https://api2.branch.io/v1/url", options);
       const json = await res.json();
 
-      // const finalLink = json.url;
-      const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${json.url}&html_redirect=1`;
+      const finalLink = json.url;
 
       // let firstShortLInk = `${datas.data.firstToken}=https://www.yo%75%74%75be.com/redirect?q=${datas.data.encoded}/${datas.data.shortCode}%26redir_token=${datas.data.youtubeToken}`;
 
