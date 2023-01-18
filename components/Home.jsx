@@ -75,7 +75,7 @@ export default function Home() {
           data: {
             $desktop_url: link,
             $android_url: link,
-            $web_only: true,
+            $web_only: false,
             $blackberry_url: link,
             $windows_phone_url: link,
             $fire_url: link,
@@ -107,7 +107,7 @@ export default function Home() {
           data: {
             $desktop_url: modYoutubeLInk,
             $android_url: modYoutubeLInk,
-            $web_only: true,
+            $web_only: false,
             $blackberry_url: modYoutubeLInk,
             $windows_phone_url: modYoutubeLInk,
             $fire_url: modYoutubeLInk,
