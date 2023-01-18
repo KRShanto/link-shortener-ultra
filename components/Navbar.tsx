@@ -37,7 +37,6 @@ export default function Navbar() {
       setIsLoading(false);
     }
   }
-console.log(user)
   return (
     <nav>
       <div className="logo">

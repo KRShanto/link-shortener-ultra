@@ -55,12 +55,15 @@ export default function Home() {
         domain: domainInput,
       }),
     });
-
     const datas = await response.json();
 
     if (datas.type === "SUCCESS") {
       // const link = `https://www.facebook.com/l.php?u=${encodLink}/${datas.data.shortCode}${datas.data.firstToken}`;
-      const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
+      // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
+
+      const link = urlInput;
+      // const link = `https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqa3JCTi1XQW53RkNyQlh3aEFNRTMxekNkVEYwUXxBQ3Jtc0trdU5SQjdfTGRJaVVsMzFITGlJZlJYUW1IWGxqWG1PMjBqYy1IZmo3VENST2ktdDkyTUdKTGI2ZmItT1hKNS1BdHR1UVNtZ0o4eE5ra0lNdHdyc3pPNGRjUVpBSzVtTHd0OVY1eC00ekt5Xzd4MldTWQ&q=${urlInput}&html_redirect=1`;
+
 
       const options = {
         method: "POST",
@@ -96,7 +99,7 @@ export default function Home() {
       const res = await fetch("https://api2.branch.io/v1/url", options);
       const json = await res.json();
 
-      const finalLink = json.url;
+      const modYoutubeLInk = json.url;
 
       // let firstShortLInk = `${datas.data.firstToken}=https://www.yo%75%74%75be.com/redirect?q=${datas.data.encoded}/${datas.data.shortCode}%26redir_token=${datas.data.youtubeToken}`;
 
@@ -114,6 +117,8 @@ export default function Home() {
       // const datas2 = await response2.json();
 
       const encodLink = encodeURIComponent(domainInput);
+
+      const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${modYoutubeLInk}&html_redirect=1`
 
       setOutputLink(finalLink);
       // `https://${
