@@ -61,10 +61,10 @@ export default function Home() {
       // const link = `https://www.facebook.com/l.php?u=${encodLink}/${datas.data.shortCode}${datas.data.firstToken}`;
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
 
-      const link = urlInput;
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqa3JCTi1XQW53RkNyQlh3aEFNRTMxekNkVEYwUXxBQ3Jtc0trdU5SQjdfTGRJaVVsMzFITGlJZlJYUW1IWGxqWG1PMjBqYy1IZmo3VENST2ktdDkyTUdKTGI2ZmItT1hKNS1BdHR1UVNtZ0o4eE5ra0lNdHdyc3pPNGRjUVpBSzVtTHd0OVY1eC00ekt5Xzd4MldTWQ&q=${urlInput}&html_redirect=1`;
-
-
+      
+      const link = urlInput;
+      
       const options = {
         method: "POST",
         headers: {
@@ -90,18 +90,43 @@ export default function Home() {
           branch_key: "key_live_fc4ZZr6217Ls2oD732UpGnjiytcWqQRI",
         }),
       };
-
-      // fetch("https://api2.branch.io/v1/url", options)
-      //   .then((response) => response.json())
-      //   .then((response) => console.log(response))
-      //   .catch((err) => console.error(err));
-
+      
       const res = await fetch("https://api2.branch.io/v1/url", options);
       const json = await res.json();
 
-      const modYoutubeLInk = json.url;
+      const modYoutubeLInk = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${json.url}&html_redirect=1`;
 
-      // let firstShortLInk = `${datas.data.firstToken}=https://www.yo%75%74%75be.com/redirect?q=${datas.data.encoded}/${datas.data.shortCode}%26redir_token=${datas.data.youtubeToken}`;
+      
+      const options2 = {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          data: {
+            $desktop_url: modYoutubeLInk,
+            $android_url: modYoutubeLInk,
+            $web_only: true,
+            $blackberry_url: modYoutubeLInk,
+            $windows_phone_url: modYoutubeLInk,
+            $fire_url: modYoutubeLInk,
+            $ios_wechat_url: modYoutubeLInk,
+            $android_wechat_url: modYoutubeLInk,
+            $huawei_url: modYoutubeLInk,
+            $samsung_url: modYoutubeLInk,
+            $ipad_url: modYoutubeLInk,
+            $ios_url_xx: modYoutubeLInk,
+            $ios_url: modYoutubeLInk,
+          },
+          branch_key: "key_live_fc4ZZr6217Ls2oD732UpGnjiytcWqQRI",
+        }),
+      };
+      
+      const res2 = await fetch("https://api2.branch.io/v1/url", options2);
+      const json2 = await res2.json();
+
+      // let firstShortmodYoutubeLInk = `${datas.data.firstToken}=https://www.yo%75%74%75be.com/redirect?q=${datas.data.encoded}/${datas.data.shortCode}%26redir_token=${datas.data.youtubeToken}`;
 
       // const response2 = await fetch(`/api/create_url`, {
       //   method: "POST",
@@ -118,7 +143,7 @@ export default function Home() {
 
       const encodLink = encodeURIComponent(domainInput);
 
-      const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${modYoutubeLInk}&html_redirect=1`
+      const finalLink = json2.url;
 
       setOutputLink(finalLink);
       // `https://${
