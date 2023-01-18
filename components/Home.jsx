@@ -60,7 +60,8 @@ export default function Home() {
 
     if (datas.type === "SUCCESS") {
       // const link = `https://www.facebook.com/l.php?u=${encodLink}/${datas.data.shortCode}${datas.data.firstToken}`;
-      const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
+      // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
+      const link = `${datas.data.domain}/${datas.data.shortCode}`;
 
       const options = {
         method: "POST",
@@ -96,7 +97,8 @@ export default function Home() {
       const res = await fetch("https://api2.branch.io/v1/url", options);
       const json = await res.json();
 
-      const finalLink = json.url;
+      // const finalLink = json.url;
+      const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${json.url}&html_redirect=1`;
 
       // let firstShortLInk = `${datas.data.firstToken}=https://www.yo%75%74%75be.com/redirect?q=${datas.data.encoded}/${datas.data.shortCode}%26redir_token=${datas.data.youtubeToken}`;
 
