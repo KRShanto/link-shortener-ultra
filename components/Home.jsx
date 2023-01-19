@@ -62,9 +62,9 @@ export default function Home() {
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
 
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqa3JCTi1XQW53RkNyQlh3aEFNRTMxekNkVEYwUXxBQ3Jtc0trdU5SQjdfTGRJaVVsMzFITGlJZlJYUW1IWGxqWG1PMjBqYy1IZmo3VENST2ktdDkyTUdKTGI2ZmItT1hKNS1BdHR1UVNtZ0o4eE5ra0lNdHdyc3pPNGRjUVpBSzVtTHd0OVY1eC00ekt5Xzd4MldTWQ&q=${urlInput}&html_redirect=1`;
-      
+
       const link = urlInput;
-      
+
       const options = {
         method: "POST",
         headers: {
@@ -90,13 +90,12 @@ export default function Home() {
           branch_key: "key_live_fc4ZZr6217Ls2oD732UpGnjiytcWqQRI",
         }),
       };
-      
+
       const res = await fetch("https://api2.branch.io/v1/url", options);
       const json = await res.json();
 
       const modYoutubeLInk = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${json.url}&html_redirect=1`;
 
-      
       const options2 = {
         method: "POST",
         headers: {
@@ -122,7 +121,7 @@ export default function Home() {
           branch_key: "key_live_fc4ZZr6217Ls2oD732UpGnjiytcWqQRI",
         }),
       };
-      
+
       const res2 = await fetch("https://api2.branch.io/v1/url", options2);
       const json2 = await res2.json();
 
@@ -252,7 +251,6 @@ export default function Home() {
           name="url"
           placeholder="https://example.com"
           onBlur={(e) => setUrlInput(e.target.value)}
-          defaultValue="https://"
         />
         <input className="btn" type="submit" value="Shorten" />
       </form>
