@@ -224,6 +224,7 @@ export default function Home() {
           name="url"
           placeholder="https://example.com"
           onBlur={(e) => setUrlInput(e.target.value)}
+          defaultValue="https://"
         />
         <input className="btn" type="submit" value="Shorten" />
       </form>
