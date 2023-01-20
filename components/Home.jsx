@@ -142,7 +142,8 @@ export default function Home() {
 
       const encodLink = encodeURIComponent(domainInput);
 
-      const finalLink = json2.url;
+      // const finalLink = json2.url;
+      const finalLink = `${datas.data.domain}/${datas.data.shortCode}`;
 
       setOutputLink(finalLink);
       // `https://${
