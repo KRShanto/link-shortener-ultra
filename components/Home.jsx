@@ -25,7 +25,7 @@ export default function Home() {
       if (datas.type === "SUCCESS") {
         // setDomains(datas.data);
         // sort domains by current domain name
-        const currentDomain = window.location.hostname;
+        const currentDomain = `https://${window.location.hostname}`;
         console.log(currentDomain);
         const sortedDomains = datas.data.sort((a, b) => {
           if (a.domain === currentDomain) return -1;
