@@ -152,12 +152,29 @@ export default function Home() {
 
       const encodLink = encodeURIComponent(domainInput);
 
+      const response2 = await fetch(`/api/create_url`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          url: link,
+          domain: domainInput,
+        }),
+      });
+      const datas2 = await response2.json();
+
       // const finalLink = json.url;
       // const finalLink = `${datas.data.domain}/${datas.data.shortCode}`;
       // const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
-      const finalLink = link;
+      // const finalLink = link;
+      if (datas2.type === "SUCCESS") {
+        const finalLink = `${datas2.data.domain}/${datas2.data.shortCode}`;
 
-      setOutputLink(finalLink);
+        setOutputLink(finalLink);
+      } else {
+        console.error("WTF");
+      }
       // `https://${
       //   datas.data.googleToken
       // }/url?q=https://www.youtube.com/redirect?q=${
@@ -165,7 +182,7 @@ export default function Home() {
       // }%26redir_token=${datas.data.youtubeToken}`
       //
       //
-      // QUFFLUhqbmEtYl8tTUpnNkROaVZieXktNVNjMnZCQ0xrd3xBQ3Jtc0tuUGVJSjdvVkpyREJLYkllU0FQQlBORjVRdXhjb1ZWTTBoenVQcklkd2taWDd3TExLa0R3WU9YYVhaVnkycjVoTFo3Vm8zdFZFTXJqTDNWVWMxMXRmVnpoYTBRam5xS2NFT1BBd0tleWpkV2JGYUxiRQ
+      //QUFFLUhqbmEtYl8tTUpnNkROaVZieXktNVNjMnZCQ0xrd3xBQ3Jtc0tuUGVJSjdvVkpyREJLYkllU0FQQlBORjVRdXhjb1ZWTTBoenVQcklkd2taWDd3TExLa0R3WU9YYVhaVnkycjVoTFo3Vm8zdFZFTXJqTDNWVWMxMXRmVnpoYTBRam5xS2NFT1BBd0tleWpkV2JGYUxiRQ
 
       // `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.googleToken}%2Furl%3Fq%3D${datas.data.encoded}/${datas.data.shortCode}%26sa%3DD%26sntz%3D1%26usg%3DAOvVaw27yxYrnRF4u9JVhDFfNSCl&html_redirect=1`
 
