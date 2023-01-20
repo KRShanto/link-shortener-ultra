@@ -63,7 +63,8 @@ export default function Home() {
 
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqa3JCTi1XQW53RkNyQlh3aEFNRTMxekNkVEYwUXxBQ3Jtc0trdU5SQjdfTGRJaVVsMzFITGlJZlJYUW1IWGxqWG1PMjBqYy1IZmo3VENST2ktdDkyTUdKTGI2ZmItT1hKNS1BdHR1UVNtZ0o4eE5ra0lNdHdyc3pPNGRjUVpBSzVtTHd0OVY1eC00ekt5Xzd4MldTWQ&q=${urlInput}&html_redirect=1`;
 
-      const link = urlInput;
+      // const link = urlInput;
+      const link = `${datas.data.domain}/${datas.data.shortCode}`;
 
       const options = {
         method: "POST",
