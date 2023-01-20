@@ -23,7 +23,18 @@ export default function Home() {
       const datas = await response.json();
 
       if (datas.type === "SUCCESS") {
-        setDomains(datas.data);
+        // setDomains(datas.data);
+        // sort domains by current domain name
+        const currentDomain = window.location.hostname;
+        console.log(currentDomain);
+        const currentDomainIndex = datas.data.findIndex(
+          (domain) => domain.domain === currentDomain
+        );
+        const sortedDomains = [
+          ...datas.data.slice(currentDomainIndex),
+          ...datas.data.slice(0, currentDomainIndex),
+        ];
+        setDomains(sortedDomains);
       }
     };
 
