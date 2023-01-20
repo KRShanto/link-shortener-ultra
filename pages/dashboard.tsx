@@ -601,7 +601,7 @@ export default function Dashboard() {
             <input
               type="text"
               defaultValue={userTokenForChangeFirstToken}
-              placeholder="Change fb token(first token)"
+              placeholder="Change first token"
             />
             <button className="btn" type="submit">
               Change
@@ -622,7 +622,7 @@ export default function Dashboard() {
             <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />
             <input type="text" placeholder="Affiliate profile code" />
-            <input type="text" placeholder="Facebook Token" />
+            <input type="text" placeholder="Add First Token" />
             <label htmlFor="check">Redirect to Error page</label>
             <input type="checkbox" id="check" />
             <select
