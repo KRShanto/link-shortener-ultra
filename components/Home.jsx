@@ -27,13 +27,11 @@ export default function Home() {
         // sort domains by current domain name
         const currentDomain = window.location.hostname;
         console.log(currentDomain);
-        const currentDomainIndex = datas.data.findIndex(
-          (domain) => domain.domain === currentDomain
-        );
-        const sortedDomains = [
-          ...datas.data.slice(currentDomainIndex),
-          ...datas.data.slice(0, currentDomainIndex),
-        ];
+        const sortedDomains = datas.data.sort((a, b) => {
+          if (a.domain === currentDomain) return -1;
+          if (b.domain === currentDomain) return 1;
+          return 0;
+        });
         setDomains(sortedDomains);
       }
     };
