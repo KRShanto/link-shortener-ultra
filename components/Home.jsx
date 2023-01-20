@@ -143,7 +143,8 @@ export default function Home() {
       const encodLink = encodeURIComponent(domainInput);
 
       // const finalLink = json2.url;
-      const finalLink = `${datas.data.domain}/${datas.data.shortCode}`;
+      // const finalLink = `${datas.data.domain}/${datas.data.shortCode}`;
+      const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
 
       setOutputLink(finalLink);
       // `https://${
