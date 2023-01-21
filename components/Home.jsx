@@ -168,7 +168,7 @@ export default function Home() {
       const url =
         "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=AIzaSyDjuZES3lUAALOXydFpu-1KIDd0dxHqsOY";
       const data = {
-        longDynamicLink: `https://endcpa.page.link/?link=${datas2.data.domain}/${datas2.data.shortCode}`,
+        longDynamicLink: `https://hijibiji.page.link/?link=${datas2.data.domain}/${datas2.data.shortCode}`,
       };
 
       const firebaseResponse = await fetch(url, {
