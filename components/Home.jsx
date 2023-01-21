@@ -164,12 +164,40 @@ export default function Home() {
       });
       const datas2 = await response2.json();
 
+      // ********************** Firebase Shorten Link (Start) *********************** //
+      const url =
+        "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=AIzaSyDjuZES3lUAALOXydFpu-1KIDd0dxHqsOY";
+      const data = {
+        longDynamicLink: `https://endcpa.page.link/?link=${datas2.data.domain}/${datas2.data.shortCode}`,
+      };
+
+      const firebaseResponse = await fetch(url, {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      // .then((response) => response.json())
+      // .then((data) => {
+      //   console.log("Success:", data);
+      // })
+      // .catch((error) => {
+      //   console.error("Error:", error);
+      // });
+
+      const firebaseData = await firebaseResponse.json();
+      const firebaseLink = firebaseData.shortLink;
+
+      // ********************** Firebase Shorten Link (End) *********************** //
+
       // const finalLink = json.url;
       // const finalLink = `${datas.data.domain}/${datas.data.shortCode}`;
       // const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
       // const finalLink = link;
       if (datas2.type === "SUCCESS") {
-        const finalLink = `${datas2.data.domain}/${datas2.data.shortCode}`;
+        // const finalLink = `${datas2.data.domain}/${datas2.data.shortCode}`;
+        const finalLink = firebaseLink;
 
         setOutputLink(finalLink);
       } else {
