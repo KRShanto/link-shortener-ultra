@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function RedirectLandingPage() {
   const router = useRouter();
@@ -6,6 +7,15 @@ export default function RedirectLandingPage() {
 
   return (
     <>
+      <Head>
+        <title>Save your images</title>
+        <meta
+          name="description"
+          content="Save your images and share them with your friends"
+        />
+        <meta name="keywords" content="images, save, share" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <a className="join-free-link" href={`/red/${shortCode}`}>
         Join Free
       </a>
