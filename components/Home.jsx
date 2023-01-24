@@ -199,6 +199,7 @@ export default function Home() {
         const finalLink = `${datas2.data.domain}/red/${datas2.data.shortCode}`;
         // const finalLink = `${datas2.data.encoded}/${datas2.data.shortCode}`;
         // const finalLink = firebaseLink;
+        // const finalLink = `${datas2.data.domain}/${datas2.data.shortCode}`;
 
         setOutputLink(finalLink);
       } else {
