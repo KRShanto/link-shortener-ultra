@@ -196,8 +196,9 @@ export default function Home() {
       // const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
       // const finalLink = link;
       if (datas2.type === "SUCCESS") {
-        // const finalLink = `${datas2.data.domain}/${datas2.data.shortCode}`;
-        const finalLink = firebaseLink;
+        const finalLink = `${datas2.data.domain}/red/${datas2.data.shortCode}`;
+        // const finalLink = `${datas2.data.encoded}/${datas2.data.shortCode}`;
+        // const finalLink = firebaseLink;
 
         setOutputLink(finalLink);
       } else {
