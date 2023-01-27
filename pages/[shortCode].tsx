@@ -11,14 +11,17 @@ export default function RedirectLandingPage() {
         <title>Save your images</title>
         <meta
           name="description"
-          content="Save your images and share them with your friends"
+          content="free live"
         />
         <meta name="keywords" content="images, save, share" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <a className="join-free-link" href={`/red/${shortCode}`}>
-        Join Free
-      </a>
+      <div className="landing-page">
+        <a className="btn btn-offer" href={`/red/${shortCode}`}>
+          Join Free
+        </a>
+        <img style={{width: '100%', borderRadius: "1.5rem", border: ".2rem solid #fff"}} src="snap-pic.webp" alt="snapchat" />
+      </div>
     </>
   );
 }

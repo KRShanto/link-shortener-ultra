@@ -64,12 +64,11 @@ export default function Home() {
         domain: domainInput,
       }),
     });
-    const datas = await response.json();
+    let datas = await response.json();
+
+    // export { data } = datas;
 
     if (datas.type === "SUCCESS") {
-      // const link = `https://www.facebook.com/l.php?u=${encodLink}/${datas.data.shortCode}${datas.data.firstToken}`;
-      // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
-
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
 
       // // const link = urlInput;
@@ -136,6 +135,9 @@ export default function Home() {
       // const json2 = await res2.json();
 
       // let firstShortmodYoutubeLInk = `${datas.data.firstToken}=https://www.yo%75%74%75be.com/redirect?q=${datas.data.encoded}/${datas.data.shortCode}%26redir_token=${datas.data.youtubeToken}`;
+
+
+      // const firstShortLInk = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
 
       // const response2 = await fetch(`/api/create_url`, {
       //   method: "POST",
