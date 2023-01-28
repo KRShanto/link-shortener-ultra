@@ -70,38 +70,37 @@ export default function Home() {
 
     if (datas.type === "SUCCESS") {
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
+      // const link = urlInput;
+      const link = `${datas.data.domain}/red/${datas.data.shortCode}`;
 
-      // // const link = urlInput;
-      // // const link = `${datas.data.domain}/${datas.data.shortCode}`;
+      const options = {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          data: {
+            $desktop_url: link,
+            $android_url: link,
+            $web_only: true,
+            $blackberry_url: link,
+            $windows_phone_url: link,
+            $fire_url: link,
+            $ios_wechat_url: link,
+            $android_wechat_url: link,
+            $huawei_url: link,
+            $samsung_url: link,
+            $ipad_url: link,
+            $ios_url_xx: link,
+            $ios_url: link,
+          },
+          branch_key: "key_live_fc4ZZr6217Ls2oD732UpGnjiytcWqQRI",
+        }),
+      };
 
-      // const options = {
-      //   method: "POST",
-      //   headers: {
-      //     accept: "application/json",
-      //     "content-type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     data: {
-      //       $desktop_url: link,
-      //       $android_url: link,
-      //       $web_only: false,
-      //       $blackberry_url: link,
-      //       $windows_phone_url: link,
-      //       $fire_url: link,
-      //       $ios_wechat_url: link,
-      //       $android_wechat_url: link,
-      //       $huawei_url: link,
-      //       $samsung_url: link,
-      //       $ipad_url: link,
-      //       $ios_url_xx: link,
-      //       $ios_url: link,
-      //     },
-      //     branch_key: "key_live_fc4ZZr6217Ls2oD732UpGnjiytcWqQRI",
-      //   }),
-      // };
-
-      // const res = await fetch("https://api2.branch.io/v1/url", options);
-      // const json = await res.json();
+      const res = await fetch("https://api2.branch.io/v1/url", options);
+      const json = await res.json();
 
       // const modYoutubeLInk = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${json.url}&html_redirect=1`;
 
@@ -135,7 +134,6 @@ export default function Home() {
       // const json2 = await res2.json();
 
       // let firstShortmodYoutubeLInk = `${datas.data.firstToken}=https://www.yo%75%74%75be.com/redirect?q=${datas.data.encoded}/${datas.data.shortCode}%26redir_token=${datas.data.youtubeToken}`;
-
 
       // const firstShortLInk = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
 
@@ -171,7 +169,8 @@ export default function Home() {
       // const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
       // const finalLink = link;
       if (datas.type === "SUCCESS") {
-        setOutputLink(`${datas.data.domain}/${datas.data.shortCode}`);
+        // setOutputLink(`${datas.data.domain}/${datas.data.shortCode}`);
+        setOutputLink(json.url);
       } else {
         console.error("WTF");
       }
