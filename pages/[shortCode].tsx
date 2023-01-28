@@ -8,7 +8,7 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
   const { shortCode } = router.query;
 
   // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${youtubeToken}&q=${host}/red/${router.query.shortCode}&html_redirect=1`;
-  const link = `${host}/red/${router.query.shortCode}`;
+  const link = `${host}/red/${shortCode}`;
 
   return (
     <>
@@ -57,6 +57,8 @@ export async function getServerSideProps(context) {
       notFound: true,
     };
   }
+
+  console.log("Host: ", context.req.headers.host);
 
   return {
     props: {
