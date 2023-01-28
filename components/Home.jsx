@@ -71,7 +71,7 @@ export default function Home() {
     if (datas.type === "SUCCESS") {
       // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
       // const link = urlInput;
-      const link = `${datas.data.domain}/red/${datas.data.shortCode}`;
+      const link = `${datas.data.domain}/${datas.data.shortCode}`;
 
       const options = {
         method: "POST",

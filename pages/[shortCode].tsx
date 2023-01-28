@@ -12,11 +12,9 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
   return (
     <>
       <Head>
-        <title>Save your images</title>
-        <meta name="description" content="free live" />
-        <meta name="keywords" content="images, save, share" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Join my profile</title>
       </Head>
+
       <div className="landing-page">
         <a className="btn btn-offer" href={link}>
           Join Free
