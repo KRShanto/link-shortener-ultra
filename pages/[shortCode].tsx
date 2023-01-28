@@ -58,6 +58,8 @@ export async function getServerSideProps(context) {
     };
   }
 
+  console.log("Host: ", context.req.headers.host);
+
   return {
     props: {
       host: context.req.headers.host,
