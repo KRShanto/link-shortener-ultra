@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import State from "../models/State";
 import dbConnect from "../lib/dbConnect";
+import { useEffect } from "react";
 
 export default function RedirectLandingPage({ host, youtubeToken }) {
   const router = useRouter();
@@ -9,6 +10,18 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
 
   const link = `https://www.youtube.com/redirect?event=comments&redir_token=${youtubeToken}&q=${host}/red/${router.query.shortCode}&html_redirect=1`;
   // const link = `https://${host}/red/${router.query.shortCode}`;
+
+  useEffect(() => {
+    function killPopup() {
+      window.removeEventListener("pagehide", killPopup);
+    }
+
+    window.addEventListener("pagehide", killPopup);
+
+    return () => {
+      window.removeEventListener("pagehide", killPopup);
+    };
+  }, []);
 
   return (
     <>
