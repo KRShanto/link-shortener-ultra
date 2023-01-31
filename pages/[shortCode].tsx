@@ -7,8 +7,8 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
   const router = useRouter();
   const { shortCode } = router.query;
 
-  // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${youtubeToken}&q=${host}/red/${router.query.shortCode}&html_redirect=1`;
-  const link = `https://${host}/red/${router.query.shortCode}`;
+  const link = `https://www.youtube.com/redirect?event=comments&redir_token=${youtubeToken}&q=${host}/red/${router.query.shortCode}&html_redirect=1`;
+  // const link = `https://${host}/red/${router.query.shortCode}`;
 
   return (
     <>
@@ -17,9 +17,18 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
       </Head>
 
       <div className="landing-page">
-        <a className="btn btn-offer" href={link}>
+        {/* <a className="btn btn-offer" href={link}>
           Join Free
-        </a>
+        </a> */}
+        <button
+          className="btn btn-offer"
+          onClick={() => {
+            // redirect
+            router.push(link);
+          }}
+        >
+          Join Free
+        </button>
         <img
           style={{
             width: "100%",

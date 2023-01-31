@@ -166,13 +166,12 @@ export default function Home() {
 
       // const finalLink = json.url;
       // const finalLink = `${datas.data.domain}/${datas.data.shortCode}`;
-      const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/red/${datas.data.shortCode}&html_redirect=1`;
+      // const finalLink = `https://www.youtube.com/redirect?event=comments&redir_token=${datas.data.youtubeToken}&q=${datas.data.domain}/${datas.data.shortCode}&html_redirect=1`;
       // const finalLink = link;
       if (datas.type === "SUCCESS") {
         // setOutputLink(`${datas.data.domain}/${datas.data.shortCode}`);
-        // setOutputLink(`${datas.data.domain}/red${datas.data.shortCode}`);
         // setOutputLink(json.url);
-        setOutputLink(finalLink);
+        setOutputLink(link);
       } else {
         console.error("WTF");
       }
