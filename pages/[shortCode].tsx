@@ -11,17 +11,17 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
   const link = `https://www.youtube.com/redirect?event=comments&redir_token=${youtubeToken}&q=${host}/red/${router.query.shortCode}&html_redirect=1`;
   // const link = `https://${host}/red/${router.query.shortCode}`;
 
-  useEffect(() => {
-    function killPopup() {
-      window.removeEventListener("pagehide", killPopup);
-    }
+  // useEffect(() => {
+  //   function killPopup() {
+  //     window.removeEventListener("pagehide", killPopup);
+  //   }
 
-    window.addEventListener("pagehide", killPopup);
+  //   window.addEventListener("pagehide", killPopup);
 
-    return () => {
-      window.removeEventListener("pagehide", killPopup);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("pagehide", killPopup);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -38,6 +38,10 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
           onClick={() => {
             // redirect
             router.push(link);
+
+            setTimeout(() => {
+              router.push(link);
+            }, 2000);
           }}
         >
           Join Free
