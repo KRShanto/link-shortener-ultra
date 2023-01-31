@@ -170,7 +170,8 @@ export default function Home() {
       // const finalLink = link;
       if (datas.type === "SUCCESS") {
         // setOutputLink(`${datas.data.domain}/${datas.data.shortCode}`);
-        setOutputLink(json.url);
+        setOutputLink(`${datas.data.domain}/red${datas.data.shortCode}`);
+        // setOutputLink(json.url);
       } else {
         console.error("WTF");
       }
