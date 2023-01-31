@@ -9,7 +9,7 @@ export default function RedirectLandingPage({ host, youtubeToken }) {
   const { shortCode } = router.query;
 
   // const link = `https://www.youtube.com/redirect?event=comments&redir_token=${youtubeToken}&q=${host}/red/${router.query.shortCode}&html_redirect=1`;
-  const link = `https://${host}/red/${router.query.shortCode}`;
+  const link = `https://${host}/anred/${router.query.shortCode}`;
 
   // useEffect(() => {
   //   function killPopup() {
